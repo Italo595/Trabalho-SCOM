@@ -1,0 +1,90 @@
+/* ==========================================================================
+   1. VARIÁVEIS E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+:root {
+	--cor-primaria: #cc0000;
+	--cor-secundaria: #2a75bb;
+	--cor-destaque: #ffcb05;
+	--cor-texto: #333333;
+	--cor-texto-claro: #ffffff;
+	--cor-fundo: #f4f4f9;
+	--cor-fundo-card: #ffffff;
+	--cor-borda: #e5e7eb;
+
+	--fonte-principal: 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+	--altura-cabecalho: 70px;
+	--largura-sidebar: 280px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 100%; scroll-behavior: smooth; }
+
+body {
+	font-family: var(--fonte-principal);
+	background-color: var(--cor-fundo);
+	color: var(--cor-texto);
+	line-height: 1.6;
+	overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. ACESSIBILIDADE E FOCO
+   ========================================================================== */
+:focus-visible {
+	outline: 4px solid var(--cor-destaque);
+	outline-offset: 2px;
+	border-radius: 4px;
+}
+
+a {
+	color: var(--cor-secundaria);
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+a:hover { color: #1c558e; text-decoration: underline; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ==========================================================================
+   3. CABEÇALHO (Header e Nav)
+   ========================================================================== */
+.cabecalho {
+	background-color: var(--cor-primaria);
+	color: var(--cor-texto-claro);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 2rem;
+	height: var(--altura-cabecalho);
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.cabecalho-esquerda { display: flex; align-items: center; gap: 1rem; }
+.cabecalho h1 { font-size: 1.5rem; color: var(--cor-texto-claro); }
+
+.input-toggle { display: none; }
+
+.btn-toggle-aside {
+	display: none;
+	background-color: transparent;
+	color: var(--cor-texto-claro);
+	font-size: 1.5rem;
+	cursor: pointer;
+	padding: 0.5rem;
+	border: 2px solid transparent;
+}
+
+.menu-navegacao { list-style: none; display: flex; gap: 1.5rem; }
+
+.link-menu {
+	color: var(--cor-texto-claro);
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 0.9rem;
+}
+.link-menu:hover { color: var(--cor-destaque); text-decoration: none; }
