@@ -88,3 +88,57 @@ img { max-width: 100%; height: auto; display: block; }
 	font-size: 0.9rem;
 }
 .link-menu:hover { color: var(--cor-destaque); text-decoration: none; }
+
+/* ==========================================================================
+   4. ESTRUTURA PRINCIPAL (Grid/Flexbox)
+   ========================================================================== */
+.container-conteudo {
+	display: flex;
+	max-width: 1400px;
+	margin: 0 auto;
+	min-height: calc(100vh - var(--altura-cabecalho));
+}
+
+/* BARRA LATERAL (Aside) */
+.menu-lateral {
+	width: var(--largura-sidebar);
+	background-color: var(--cor-fundo-card);
+	padding: 2rem 1.5rem;
+	border-right: 1px solid var(--cor-borda);
+	position: sticky;
+	top: var(--altura-cabecalho);
+	height: calc(100vh - var(--altura-cabecalho));
+	overflow-y: auto;
+}
+
+.menu-lateral h3 {
+	margin-bottom: 1.5rem;
+	font-size: 1.25rem;
+	border-bottom: 2px solid var(--cor-secundaria);
+	padding-bottom: 0.5rem;
+}
+
+.lista-categorias { list-style: none; }
+.lista-categorias li { margin-bottom: 0.8rem; }
+
+.link-categoria { font-weight: bold; color: var(--cor-texto); }
+
+.caixa-detalhes {
+	background-color: #f9fafb;
+	border: 1px solid var(--cor-borda);
+	border-radius: 6px;
+	padding: 0.5rem;
+	cursor: pointer;
+}
+
+.titulo-detalhes { font-weight: bold; color: var(--cor-secundaria); }
+
+.sublista-categoria {
+	list-style: none;
+	margin-top: 0.5rem;
+	padding-left: 1.5rem;
+}
+.sublista-categoria li a { color: #4b5563; font-size: 0.9rem; }
+
+/* CONTEÚDO PRINCIPAL (Main) */
+.conteudo-principal { flex: 1; padding: 2rem; width: 100%; }
