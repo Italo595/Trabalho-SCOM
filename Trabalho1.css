@@ -142,3 +142,74 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* CONTEÚDO PRINCIPAL (Main) */
 .conteudo-principal { flex: 1; padding: 2rem; width: 100%; }
+
+/* ==========================================================================
+   5. CATÁLOGO POKÉMON (Grid de Cards)
+   ========================================================================== */
+.secao-home { margin-bottom: 3rem; }
+
+.home-card {
+	background-color: var(--cor-secundaria);
+	color: var(--cor-texto-claro);
+	padding: 2.5rem;
+	border-radius: 12px;
+	text-align: center;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.home-card h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--cor-texto-claro); }
+
+.secao-pokemon { margin-bottom: 4rem; }
+.secao-pokemon h2 {
+	font-size: 1.8rem;
+	color: var(--cor-primaria);
+	border-bottom: 3px solid var(--cor-primaria);
+	padding-bottom: 0.5rem;
+	margin-bottom: 2rem;
+}
+
+.grid-pokemon {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 2rem;
+}
+
+.card-pokemon {
+	background-color: var(--cor-fundo-card);
+	border-radius: 12px;
+	padding: 1.5rem;
+	box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+	border: 1px solid var(--cor-borda);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.card-pokemon:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.link-card { color: inherit; text-decoration: none; }
+.card-pokemon h3 {
+	text-align: center;
+	font-size: 1.4rem;
+	margin-bottom: 1rem;
+	color: var(--cor-texto);
+}
+
+.figura-pokemon { text-align: center; margin-bottom: 1rem; }
+.figura-pokemon img {
+	background-color: #f3f4f6;
+	border-radius: 50%;
+	margin: 0 auto 1rem auto;
+	border: 4px solid var(--cor-borda);
+	transition: border-color 0.3s ease;
+}
+.card-pokemon:hover .figura-pokemon img { border-color: var(--cor-secundaria); }
+
+.figura-pokemon figcaption {
+	font-weight: bold;
+	color: var(--cor-secundaria);
+	font-size: 0.9rem;
+}
+.card-pokemon p { font-size: 0.95rem; color: #4b5563; flex-grow: 1; }
