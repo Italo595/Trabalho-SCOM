@@ -301,3 +301,47 @@ img { max-width: 100%; height: auto; display: block; }
 .fraqueza { background-color: #fef2f2; border: 1px solid #fca5a5; }
 .fraqueza h4 { color: #b91c1c; margin-bottom: 1rem; font-size: 1.2rem; border-bottom: 1px solid #fecaca; padding-bottom: 0.5rem; }
 .fraqueza ul { color: #991b1b; list-style: none; padding-left: 0; line-height: 2; }
+
+/* ==========================================================================
+   7. CLASSES UTILITÁRIAS E ANIMAÇÕES
+   ========================================================================== */
+.oculto { display: none !important; }
+
+.descricao-pokemon {
+	margin-top: 1rem;
+	padding-top: 1rem;
+	border-top: 1px dashed var(--cor-borda);
+	animation: fade-in 0.3s ease-in-out;
+}
+
+@keyframes fade-in {
+	from { opacity: 0; transform: translateY(-5px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   8. RODAPÉ (Footer)
+   ========================================================================== */
+.rodape {
+	background-color: #111827;
+	color: var(--cor-texto-claro);
+	text-align: center;
+	padding: 3rem 2rem;
+	margin-top: 4rem;
+}
+.rodape p { margin-bottom: 0.5rem; }
+
+.link-topo {
+	display: inline-block;
+	margin-top: 1.5rem;
+	padding: 0.8rem 1.5rem;
+	background-color: var(--cor-secundaria);
+	color: var(--cor-texto-claro);
+	border-radius: 4px;
+	font-weight: bold;
+}
+.link-topo:hover {
+	background-color: #1c558e;
+	color: var(--cor-texto-claro);
+	text-decoration: none;
+}
