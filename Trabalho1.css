@@ -213,3 +213,91 @@ img { max-width: 100%; height: auto; display: block; }
 	font-size: 0.9rem;
 }
 .card-pokemon p { font-size: 0.95rem; color: #4b5563; flex-grow: 1; }
+
+/* ==========================================================================
+   6. TEAM BUILDER
+   ========================================================================== */
+.btn-adicionar {
+	margin-top: 1.5rem;
+	width: 100%;
+	padding: 0.8rem;
+	background-color: var(--cor-secundaria);
+	color: var(--cor-texto-claro);
+	border: none;
+	border-radius: 6px;
+	font-weight: 700;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.1s ease;
+}
+.btn-adicionar:hover { background-color: #1c558e; }
+.btn-adicionar:active { transform: scale(0.98); }
+
+.secao-time-builder {
+	background-color: var(--cor-fundo-card);
+	padding: 2.5rem;
+	border-radius: 12px;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+	border: 3px dashed var(--cor-secundaria);
+}
+
+.msg-vazia {
+	grid-column: 1 / -1;
+	text-align: center;
+	color: #6b7280;
+	font-style: italic;
+	font-size: 1.1rem;
+	padding: 2rem;
+}
+
+.grid-time {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+	gap: 1.5rem;
+	margin-bottom: 2rem;
+}
+
+.card-time {
+	background-color: #f9fafb;
+	border: 1px solid var(--cor-borda);
+	border-radius: 8px;
+	padding: 1rem;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.card-time img {
+	background-color: #fff;
+	border-radius: 50%;
+	margin-bottom: 0.5rem;
+	border: 2px solid var(--cor-borda);
+}
+.card-time h4 { font-size: 1rem; margin-bottom: 0.2rem; }
+
+.btn-remover {
+	margin-top: 1rem;
+	background-color: #fee2e2;
+	color: #991b1b;
+	border: 1px solid #fca5a5;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	font-size: 0.85rem;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background-color 0.2s ease;
+}
+.btn-remover:hover { background-color: #fecaca; }
+
+.analise-time { border-top: 2px solid var(--cor-borda); padding-top: 2rem; }
+.analise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; }
+.analise-card { padding: 1.5rem; border-radius: 8px; }
+
+.vantagem { background-color: #ecfdf5; border: 1px solid #6ee7b7; }
+.vantagem h4 { color: #047857; margin-bottom: 1rem; font-size: 1.2rem; border-bottom: 1px solid #a7f3d0; padding-bottom: 0.5rem; }
+.vantagem ul { color: #065f46; list-style: none; padding-left: 0; line-height: 2; }
+
+.fraqueza { background-color: #fef2f2; border: 1px solid #fca5a5; }
+.fraqueza h4 { color: #b91c1c; margin-bottom: 1rem; font-size: 1.2rem; border-bottom: 1px solid #fecaca; padding-bottom: 0.5rem; }
+.fraqueza ul { color: #991b1b; list-style: none; padding-left: 0; line-height: 2; }
