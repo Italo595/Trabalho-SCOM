@@ -345,3 +345,34 @@ img { max-width: 100%; height: auto; display: block; }
 	color: var(--cor-texto-claro);
 	text-decoration: none;
 }
+
+/* ==========================================================================
+   9. MEDIA QUERIES (Responsividade: Mobile e Tablet)
+   ========================================================================== */
+@media (max-width: 1024px) {
+	.menu-navegacao { display: none; }
+	.btn-toggle-aside { display: block; }
+	
+	body:has(#toggle-aside:not(:checked)) .menu-lateral { display: none; }
+	
+	body:has(#toggle-aside:checked) .menu-lateral {
+		display: block;
+		position: fixed;
+		left: 0;
+		top: var(--altura-cabecalho);
+		height: calc(100vh - var(--altura-cabecalho));
+		z-index: 999;
+		box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+	}
+}
+
+@media (max-width: 768px) {
+	.cabecalho { padding: 0 1rem; }
+	.cabecalho h1 { font-size: 1.2rem; }
+	
+	.conteudo-principal { padding: 1.5rem 1rem; }
+	.home-card { padding: 1.5rem; }
+	
+	.analise-grid { grid-template-columns: 1fr; gap: 1rem; }
+	.grid-pokemon { grid-template-columns: 1fr; }
+}
