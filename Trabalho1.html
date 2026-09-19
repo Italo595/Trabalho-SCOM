@@ -574,16 +574,12 @@
 
 	function atualizarInterfaceTime() {
 		const grid = document.getElementById('grid-meu-time');
-		const msgVazia = document.getElementById('msg-time-vazio');
-
-		grid.innerHTML = '';
 
 		if (meuTime.length === 0) {
-			grid.appendChild(msgVazia);
-			msgVazia.style.display = 'block';
+			// Restaura a mensagem inicial exatamente como no estado original
+			grid.innerHTML = '<p id="msg-time-vazio" class="msg-vazia">Seu time está vazio. Adicione Pokémon das categorias abaixo!</p>';
 		} else {
-			if (msgVazia) msgVazia.style.display = 'none';
-
+			grid.innerHTML = '';
 			meuTime.forEach((pokemon, index) => {
 				const html = `
 					<article class="card-time">
@@ -597,6 +593,7 @@
 			});
 		}
 
+		// Executa a análise (que oculta as vantagens/fraquezas se meuTime estiver vazio)
 		analisarTime();
 	}
 
