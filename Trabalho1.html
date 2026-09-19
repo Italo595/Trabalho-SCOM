@@ -554,7 +554,7 @@
 		});
 	});
 
-		function adicionarPokemon(nome, tipo, img) {
+	function adicionarPokemon(nome, tipo, img) {
 		if (meuTime.length >= maxTime) {
 			alert("Seu time já está cheio (6 Pokémon).");
 			return;
@@ -574,7 +574,6 @@
 
 	function atualizarInterfaceTime() {
 		const grid = document.getElementById('grid-meu-time');
-		const analise = document.getElementById('analise-time');
 		const msgVazia = document.getElementById('msg-time-vazio');
 
 		grid.innerHTML = '';
@@ -582,25 +581,23 @@
 		if (meuTime.length === 0) {
 			grid.appendChild(msgVazia);
 			msgVazia.style.display = 'block';
-			if (analise) analise.classList.add('oculto');
-			return;
-		}
-		if (msgVazia) msgVazia.style.display = 'none';
+		} else {
+			if (msgVazia) msgVazia.style.display = 'none';
 
-		meuTime.forEach((pokemon, index) => {
-			const html = `
-				<article class="card-time">
-					<img src="${pokemon.img}" alt="${pokemon.nome}" width="80" height="80">
-					<h4>${pokemon.nome}</h4>
-					<p><small>${pokemon.tipo}</small></p>
-					<button class="btn-remover" onclick="removerPokemon(${index})">❌ Remover</button>
-				</article>
-			`;
-			grid.innerHTML += html;
-		});
+			meuTime.forEach((pokemon, index) => {
+				const html = `
+					<article class="card-time">
+						<img src="${pokemon.img}" alt="${pokemon.nome}" width="80" height="80">
+						<h4>${pokemon.nome}</h4>
+						<p><small>${pokemon.tipo}</small></p>
+						<button class="btn-remover" onclick="removerPokemon(${index})">❌ Remover</button>
+					</article>
+				`;
+				grid.innerHTML += html;
+			});
+		}
 
 		analisarTime();
-
 	}
 
 	function analisarTime() {
@@ -609,6 +606,16 @@
 		const listaFraquezas = document.getElementById('lista-fraquezas');
 		
 		if (!analise || !listaVantagens || !listaFraquezas) return;
+
+		// TIME VAZIO 
+		if (meuTime.length === 0) {
+			listaVantagens.innerHTML = '';
+			listaFraquezas.innerHTML = '';
+			analise.classList.add('oculto');
+			return;
+		}
+
+		// Time tem Pokémon → mostra a análise e calcula
 		analise.classList.remove('oculto');
 		
 		let forcas = new Set();
