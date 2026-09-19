@@ -17,9 +17,16 @@
 	--largura-sidebar: 280px;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
 
-html { font-size: 100%; scroll-behavior: smooth; }
+html {
+	font-size: 100%;
+	scroll-behavior: smooth;
+}
 
 body {
 	font-family: var(--fonte-principal);
@@ -43,9 +50,17 @@ a {
 	text-decoration: none;
 	transition: color 0.3s ease;
 }
-a:hover { color: #1c558e; text-decoration: underline; }
 
-img { max-width: 100%; height: auto; display: block; }
+a:hover {
+	color: #1c558e;
+	text-decoration: underline;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
 
 /* ==========================================================================
    3. CABEÇALHO (Header e Nav)
@@ -61,13 +76,23 @@ img { max-width: 100%; height: auto; display: block; }
 	position: sticky;
 	top: 0;
 	z-index: 1000;
-	box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.cabecalho-esquerda { display: flex; align-items: center; gap: 1rem; }
-.cabecalho h1 { font-size: 1.5rem; color: var(--cor-texto-claro); }
+.cabecalho-esquerda {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
 
-.input-toggle { display: none; }
+.cabecalho h1 {
+	font-size: 1.5rem;
+	color: var(--cor-texto-claro);
+}
+
+.input-toggle {
+	display: none;
+}
 
 .btn-toggle-aside {
 	display: none;
@@ -79,7 +104,11 @@ img { max-width: 100%; height: auto; display: block; }
 	border: 2px solid transparent;
 }
 
-.menu-navegacao { list-style: none; display: flex; gap: 1.5rem; }
+.menu-navegacao {
+	list-style: none;
+	display: flex;
+	gap: 1.5rem;
+}
 
 .link-menu {
 	color: var(--cor-texto-claro);
@@ -87,7 +116,11 @@ img { max-width: 100%; height: auto; display: block; }
 	text-transform: uppercase;
 	font-size: 0.9rem;
 }
-.link-menu:hover { color: var(--cor-destaque); text-decoration: none; }
+
+.link-menu:hover {
+	color: var(--cor-destaque);
+	text-decoration: none;
+}
 
 /* ==========================================================================
    4. ESTRUTURA PRINCIPAL (Grid/Flexbox)
@@ -118,10 +151,18 @@ img { max-width: 100%; height: auto; display: block; }
 	padding-bottom: 0.5rem;
 }
 
-.lista-categorias { list-style: none; }
-.lista-categorias li { margin-bottom: 0.8rem; }
+.lista-categorias {
+	list-style: none;
+}
 
-.link-categoria { font-weight: bold; color: var(--cor-texto); }
+.lista-categorias li {
+	margin-bottom: 0.8rem;
+}
+
+.link-categoria {
+	font-weight: bold;
+	color: var(--cor-texto);
+}
 
 .caixa-detalhes {
 	background-color: #f9fafb;
@@ -131,22 +172,35 @@ img { max-width: 100%; height: auto; display: block; }
 	cursor: pointer;
 }
 
-.titulo-detalhes { font-weight: bold; color: var(--cor-secundaria); }
+.titulo-detalhes {
+	font-weight: bold;
+	color: var(--cor-secundaria);
+}
 
 .sublista-categoria {
 	list-style: none;
 	margin-top: 0.5rem;
 	padding-left: 1.5rem;
 }
-.sublista-categoria li a { color: #4b5563; font-size: 0.9rem; }
+
+.sublista-categoria li a {
+	color: #4b5563;
+	font-size: 0.9rem;
+}
 
 /* CONTEÚDO PRINCIPAL (Main) */
-.conteudo-principal { flex: 1; padding: 2rem; width: 100%; }
+.conteudo-principal {
+	flex: 1;
+	padding: 2rem;
+	width: 100%;
+}
 
 /* ==========================================================================
    5. CATÁLOGO POKÉMON (Grid de Cards)
    ========================================================================== */
-.secao-home { margin-bottom: 3rem; }
+.secao-home {
+	margin-bottom: 3rem;
+}
 
 .home-card {
 	background-color: var(--cor-secundaria);
@@ -154,11 +208,19 @@ img { max-width: 100%; height: auto; display: block; }
 	padding: 2.5rem;
 	border-radius: 12px;
 	text-align: center;
-	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-.home-card h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--cor-texto-claro); }
 
-.secao-pokemon { margin-bottom: 4rem; }
+.home-card h2 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	color: var(--cor-texto-claro);
+}
+
+.secao-pokemon {
+	margin-bottom: 4rem;
+}
+
 .secao-pokemon h2 {
 	font-size: 1.8rem;
 	color: var(--cor-primaria);
@@ -177,19 +239,24 @@ img { max-width: 100%; height: auto; display: block; }
 	background-color: var(--cor-fundo-card);
 	border-radius: 12px;
 	padding: 1.5rem;
-	box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 	border: 1px solid var(--cor-borda);
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
 }
+
 .card-pokemon:hover {
 	transform: translateY(-5px);
-	box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
-.link-card { color: inherit; text-decoration: none; }
+.link-card {
+	color: inherit;
+	text-decoration: none;
+}
+
 .card-pokemon h3 {
 	text-align: center;
 	font-size: 1.4rem;
@@ -197,7 +264,11 @@ img { max-width: 100%; height: auto; display: block; }
 	color: var(--cor-texto);
 }
 
-.figura-pokemon { text-align: center; margin-bottom: 1rem; }
+.figura-pokemon {
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
 .figura-pokemon img {
 	background-color: #f3f4f6;
 	border-radius: 50%;
@@ -205,14 +276,22 @@ img { max-width: 100%; height: auto; display: block; }
 	border: 4px solid var(--cor-borda);
 	transition: border-color 0.3s ease;
 }
-.card-pokemon:hover .figura-pokemon img { border-color: var(--cor-secundaria); }
+
+.card-pokemon:hover .figura-pokemon img {
+	border-color: var(--cor-secundaria);
+}
 
 .figura-pokemon figcaption {
 	font-weight: bold;
 	color: var(--cor-secundaria);
 	font-size: 0.9rem;
 }
-.card-pokemon p { font-size: 0.95rem; color: #4b5563; flex-grow: 1; }
+
+.card-pokemon p {
+	font-size: 0.95rem;
+	color: #4b5563;
+	flex-grow: 1;
+}
 
 /* ==========================================================================
    6. TEAM BUILDER
@@ -230,14 +309,20 @@ img { max-width: 100%; height: auto; display: block; }
 	cursor: pointer;
 	transition: background-color 0.3s ease, transform 0.1s ease;
 }
-.btn-adicionar:hover { background-color: #1c558e; }
-.btn-adicionar:active { transform: scale(0.98); }
+
+.btn-adicionar:hover {
+	background-color: #1c558e;
+}
+
+.btn-adicionar:active {
+	transform: scale(0.98);
+}
 
 .secao-time-builder {
 	background-color: var(--cor-fundo-card);
 	padding: 2.5rem;
 	border-radius: 12px;
-	box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 	border: 3px dashed var(--cor-secundaria);
 }
 
@@ -266,15 +351,20 @@ img { max-width: 100%; height: auto; display: block; }
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
+
 .card-time img {
 	background-color: #fff;
 	border-radius: 50%;
 	margin-bottom: 0.5rem;
 	border: 2px solid var(--cor-borda);
 }
-.card-time h4 { font-size: 1rem; margin-bottom: 0.2rem; }
+
+.card-time h4 {
+	font-size: 1rem;
+	margin-bottom: 0.2rem;
+}
 
 .btn-remover {
 	margin-top: 1rem;
@@ -288,24 +378,74 @@ img { max-width: 100%; height: auto; display: block; }
 	font-weight: bold;
 	transition: background-color 0.2s ease;
 }
-.btn-remover:hover { background-color: #fecaca; }
 
-.analise-time { border-top: 2px solid var(--cor-borda); padding-top: 2rem; }
-.analise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; }
-.analise-card { padding: 1.5rem; border-radius: 8px; }
+.btn-remover:hover {
+	background-color: #fecaca;
+}
 
-.vantagem { background-color: #ecfdf5; border: 1px solid #6ee7b7; }
-.vantagem h4 { color: #047857; margin-bottom: 1rem; font-size: 1.2rem; border-bottom: 1px solid #a7f3d0; padding-bottom: 0.5rem; }
-.vantagem ul { color: #065f46; list-style: none; padding-left: 0; line-height: 2; }
+.analise-time {
+	border-top: 2px solid var(--cor-borda);
+	padding-top: 2rem;
+}
 
-.fraqueza { background-color: #fef2f2; border: 1px solid #fca5a5; }
-.fraqueza h4 { color: #b91c1c; margin-bottom: 1rem; font-size: 1.2rem; border-bottom: 1px solid #fecaca; padding-bottom: 0.5rem; }
-.fraqueza ul { color: #991b1b; list-style: none; padding-left: 0; line-height: 2; }
+.analise-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2rem;
+	margin-top: 1.5rem;
+}
+
+.analise-card {
+	padding: 1.5rem;
+	border-radius: 8px;
+}
+
+.vantagem {
+	background-color: #ecfdf5;
+	border: 1px solid #6ee7b7;
+}
+
+.vantagem h4 {
+	color: #047857;
+	margin-bottom: 1rem;
+	font-size: 1.2rem;
+	border-bottom: 1px solid #a7f3d0;
+	padding-bottom: 0.5rem;
+}
+
+.vantagem ul {
+	color: #065f46;
+	list-style: none;
+	padding-left: 0;
+	line-height: 2;
+}
+
+.fraqueza {
+	background-color: #fef2f2;
+	border: 1px solid #fca5a5;
+}
+
+.fraqueza h4 {
+	color: #b91c1c;
+	margin-bottom: 1rem;
+	font-size: 1.2rem;
+	border-bottom: 1px solid #fecaca;
+	padding-bottom: 0.5rem;
+}
+
+.fraqueza ul {
+	color: #991b1b;
+	list-style: none;
+	padding-left: 0;
+	line-height: 2;
+}
 
 /* ==========================================================================
    7. CLASSES UTILITÁRIAS E ANIMAÇÕES
    ========================================================================== */
-.oculto { display: none !important; }
+.oculto {
+	display: none !important;
+}
 
 .descricao-pokemon {
 	margin-top: 1rem;
@@ -315,8 +455,15 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 @keyframes fade-in {
-	from { opacity: 0; transform: translateY(-5px); }
-	to   { opacity: 1; transform: translateY(0); }
+	from {
+		opacity: 0;
+		transform: translateY(-5px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 /* ==========================================================================
@@ -329,7 +476,10 @@ img { max-width: 100%; height: auto; display: block; }
 	padding: 3rem 2rem;
 	margin-top: 4rem;
 }
-.rodape p { margin-bottom: 0.5rem; }
+
+.rodape p {
+	margin-bottom: 0.5rem;
+}
 
 .link-topo {
 	display: inline-block;
@@ -340,6 +490,7 @@ img { max-width: 100%; height: auto; display: block; }
 	border-radius: 4px;
 	font-weight: bold;
 }
+
 .link-topo:hover {
 	background-color: #1c558e;
 	color: var(--cor-texto-claro);
@@ -350,11 +501,18 @@ img { max-width: 100%; height: auto; display: block; }
    9. MEDIA QUERIES (Responsividade: Mobile e Tablet)
    ========================================================================== */
 @media (max-width: 1024px) {
-	.menu-navegacao { display: none; }
-	.btn-toggle-aside { display: block; }
-	
-	body:has(#toggle-aside:not(:checked)) .menu-lateral { display: none; }
-	
+	.menu-navegacao {
+		display: none;
+	}
+
+	.btn-toggle-aside {
+		display: block;
+	}
+
+	body:has(#toggle-aside:not(:checked)) .menu-lateral {
+		display: none;
+	}
+
 	body:has(#toggle-aside:checked) .menu-lateral {
 		display: block;
 		position: fixed;
@@ -362,17 +520,33 @@ img { max-width: 100%; height: auto; display: block; }
 		top: var(--altura-cabecalho);
 		height: calc(100vh - var(--altura-cabecalho));
 		z-index: 999;
-		box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+		box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
 	}
 }
 
 @media (max-width: 768px) {
-	.cabecalho { padding: 0 1rem; }
-	.cabecalho h1 { font-size: 1.2rem; }
-	
-	.conteudo-principal { padding: 1.5rem 1rem; }
-	.home-card { padding: 1.5rem; }
-	
-	.analise-grid { grid-template-columns: 1fr; gap: 1rem; }
-	.grid-pokemon { grid-template-columns: 1fr; }
+	.cabecalho {
+		padding: 0 1rem;
+	}
+
+	.cabecalho h1 {
+		font-size: 1.2rem;
+	}
+
+	.conteudo-principal {
+		padding: 1.5rem 1rem;
+	}
+
+	.home-card {
+		padding: 1.5rem;
+	}
+
+	.analise-grid {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+
+	.grid-pokemon {
+		grid-template-columns: 1fr;
+	}
 }
