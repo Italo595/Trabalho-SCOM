@@ -789,18 +789,24 @@
 		
 <script>
 	const regrasTipos = {
-		"Fogo": { vantagens: ["Planta", "Inseto", "Aço", "Gelo"], fraquezas: ["Água", "Terra", "Pedra"] },
-		"Água": { vantagens: ["Fogo", "Terra", "Pedra"], fraquezas: ["Planta", "Elétrico"] },
-		"Planta": { vantagens: ["Água", "Terra", "Pedra"], fraquezas: ["Fogo", "Gelo", "Voador", "Inseto", "Venenoso"] },
-		"Venenoso": { vantagens: ["Planta", "Fada"], fraquezas: ["Terra", "Psíquico"] },
-		"Elétrico": { vantagens: ["Água", "Voador"], fraquezas: ["Terra"] },
+		"Fogo": { vantagens: ["Planta", "Inseto", "Aço", "Gelo"], fraquezas: ["Água", "Terrestre", "Pedra"] },
+		"Água": { vantagens: ["Fogo", "Terrestre", "Pedra"], fraquezas: ["Planta", "Elétrico"] },
+		"Planta": { vantagens: ["Água", "Terrestre", "Pedra"], fraquezas: ["Fogo", "Gelo", "Voador", "Inseto", "Venenoso"] },
+		"Venenoso": { vantagens: ["Planta", "Fada"], fraquezas: ["Terrestre", "Psíquico"] },
+		"Elétrico": { vantagens: ["Água", "Voador"], fraquezas: ["Terrestre"] },
 		"Normal": { vantagens: [], fraquezas: ["Lutador"] },
 		"Voador": { vantagens: ["Planta", "Lutador", "Inseto"], fraquezas: ["Elétrico", "Gelo", "Pedra"] },
 		"Inseto": { vantagens: ["Planta", "Psíquico", "Sombrio"], fraquezas: ["Fogo", "Voador", "Pedra"] },
 		"Fada": { vantagens: ["Lutador", "Dragão", "Sombrio"], fraquezas: ["Venenoso", "Aço"] },
-		"Gelo": { vantagens: ["Planta", "Terra", "Voador", "Dragão"], fraquezas: ["Fogo", "Lutador", "Pedra", "Aço"] },
-		"Aço": { vantagens: ["Gelo", "Fada", "Pedra"], fraquezas: ["Fogo", "Lutador", "Terra"] },
-		"Psíquico": { vantagens: ["Lutador", "Venenoso"], fraquezas: ["Inseto", "Fantasma", "Sombrio"] }
+		"Gelo": { vantagens: ["Planta", "Terrestre", "Voador", "Dragão"], fraquezas: ["Fogo", "Lutador", "Pedra", "Aço"] },
+		"Aço": { vantagens: ["Gelo", "Fada", "Pedra"], fraquezas: ["Fogo", "Lutador", "Terrestre"] },
+		"Psíquico": { vantagens: ["Lutador", "Venenoso"], fraquezas: ["Inseto", "Fantasma", "Sombrio"] },
+		"Dragão": { vantagens: ["Dragão"], fraquezas: ["Gelo", "Fada", "Dragão"] },
+		"Terrestre": { vantagens: ["Fogo", "Elétrico", "Venenoso", "Pedra", "Aço"], fraquezas: ["Água", "Planta", "Gelo"] },
+		"Sombrio": { vantagens: ["Psíquico", "Fantasma"], fraquezas: ["Lutador", "Inseto", "Fada"] },
+		"Fantasma": { vantagens: ["Psíquico", "Fantasma"], fraquezas: ["Fantasma", "Sombrio"] },
+		"Lutador": { vantagens: ["Normal", "Gelo", "Pedra", "Sombrio", "Aço"], fraquezas: ["Voador", "Psíquico", "Fada"] },
+		"Pedra": { vantagens: ["Fogo", "Gelo", "Voador", "Inseto"], fraquezas: ["Água", "Planta", "Lutador", "Terrestre", "Aço"] }
 	};
 
 	let meuTime = [];
