@@ -514,6 +514,9 @@
 		"Psíquico": { vantagens: ["Lutador", "Venenoso"], fraquezas: ["Inseto", "Fantasma", "Sombrio"] }
 	};
 
+	let meuTime = [];
+	const maxTime = 6;
+
 	document.addEventListener('DOMContentLoaded', () => {
 		const cards = document.querySelectorAll('.card-pokemon');
 		
@@ -530,9 +533,21 @@
 			const linkCard = card.querySelector('.link-card');
 			if (linkCard) {
 				linkCard.addEventListener('click', (event) => {
+
 					event.preventDefault();
 					if (descricao) descricao.classList.toggle('oculto');
 				});
+			}
+
+			if (nome && tipo && img) {
+				const btn = document.createElement('button');
+				btn.className = 'btn-adicionar';
+				btn.innerHTML = '➕ Adicionar';
+				btn.onclick = (e) => {
+					e.preventDefault();
+					adicionarPokemon(nome, tipo, img);
+				};
+				card.appendChild(btn);
 			}
 
 			// Revelar descrição ao clicar no menu lateral
@@ -549,6 +564,53 @@
 			});
 		});
 	});
+
+		function adicionarPokemon(nome, tipo, img) {
+		if (meuTime.length >= maxTime) {
+			alert("Seu time já está cheio (6 Pokémon).");
+			return;
+		}
+		if (meuTime.find(p => p.nome === nome)) {
+			alert(`${nome} já está no seu time!`);
+			return;
+		}
+		meuTime.push({ nome, tipo, img });
+		atualizarInterfaceTime();
+	}
+
+	function removerPokemon(index) {
+		meuTime.splice(index, 1);
+		atualizarInterfaceTime();
+	}
+
+	function atualizarInterfaceTime() {
+		const grid = document.getElementById('grid-meu-time');
+		const analise = document.getElementById('analise-time');
+		const msgVazia = document.getElementById('msg-time-vazio');
+
+		grid.innerHTML = '';
+
+		if (meuTime.length === 0) {
+			grid.appendChild(msgVazia);
+			msgVazia.style.display = 'block';
+			if (analise) analise.classList.add('oculto');
+			return;
+		}
+		if (msgVazia) msgVazia.style.display = 'none';
+
+		meuTime.forEach((pokemon, index) => {
+			const html = `
+				<article class="card-time">
+					<img src="${pokemon.img}" alt="${pokemon.nome}" width="80" height="80">
+					<h4>${pokemon.nome}</h4>
+					<p><small>${pokemon.tipo}</small></p>
+					<button class="btn-remover" onclick="removerPokemon(${index})">❌ Remover</button>
+				</article>
+			`;
+			grid.innerHTML += html;
+		});
+	}
+
 </script>
 
 </body>
