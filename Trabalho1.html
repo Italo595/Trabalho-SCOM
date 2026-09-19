@@ -609,6 +609,40 @@
 			`;
 			grid.innerHTML += html;
 		});
+
+		analisarTime();
+
+	}
+
+	function analisarTime() {
+		const analise = document.getElementById('analise-time');
+		const listaVantagens = document.getElementById('lista-vantagens');
+		const listaFraquezas = document.getElementById('lista-fraquezas');
+		
+		if (!analise || !listaVantagens || !listaFraquezas) return;
+		analise.classList.remove('oculto');
+		
+		let forcas = new Set();
+		let fraquezas = new Set();
+
+		meuTime.forEach(pokemon => {
+			const tipos = pokemon.tipo.split('/');
+			tipos.forEach(t => {
+				if (regrasTipos[t]) {
+					regrasTipos[t].vantagens.forEach(v => forcas.add(v));
+					regrasTipos[t].fraquezas.forEach(f => fraquezas.add(f));
+				}
+			});
+		});
+
+		let fraquezasReais = [...fraquezas].filter(f => !forcas.has(f));
+
+		listaVantagens.innerHTML = [...forcas].length
+			? [...forcas].map(f => `<li>✔️ ${f}</li>`).join('')
+			: '<li>Nenhuma vantagem clara</li>';
+		listaFraquezas.innerHTML = fraquezasReais.length
+			? fraquezasReais.map(f => `<li>⚠️ ${f}</li>`).join('')
+			: '<li>Nenhuma fraqueza crítica!</li>';
 	}
 
 </script>
