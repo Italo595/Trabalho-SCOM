@@ -453,7 +453,7 @@ img {
 	border-top: 1px dashed var(--cor-borda);
 	animation: fade-in 0.3s ease-in-out;
 }
-
+/* Animação de fade-in para a descrição do Pokémon */
 @keyframes fade-in {
 	from {
 		opacity: 0;
